@@ -1,0 +1,13 @@
+{
+    "name": "canvas-landing-page",
+    "version": "1.0.0",
+    "description": "See README.md",
+    "main": "src/index.js",
+    "scripts": {
+        "upload": "az storage blob directory upload --container $web --account-name canvasstaticassets -s public -d canvas-landing-page --recursive"
+    },
+    "author": "Thomas Ranieri",
+    "license": "ISC",
+    "devDependencies": {},
+    "dependencies": {}
+}
