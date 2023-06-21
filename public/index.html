@@ -1,8 +1,11 @@
 <html>
-<title>Canvas - Pulteney Grammar School</title>
+<head>
+    <title>Canvas - Pulteney Grammar School</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
 <div class="main">
     <div class="logos">
-        <img src="pulteney-logo.svg" />
+        <img class="pulteney-logo" src="pulteney-logo.svg" />
         <span class="logos-ampersand">&</span>
         <img class="canvas-logo" src="Canvas_Stacked_ByInstructure_Color_RGB.svg" />
     </div>
@@ -70,7 +73,7 @@
         width: 800px;
         margin: 0px auto;
         text-align: center;
-        height: 100%;
+        min-height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -90,7 +93,7 @@
         justify-content: center;
     }
 
-    .logos img {
+    .pulteney-logo {
         height: 300px;
     }
 
@@ -105,8 +108,41 @@
         margin: 30px auto;
     }
 
-    img.canvas-logo {
+    .canvas-logo {
         height: 180px;
+    }
+
+    @media screen {
+        @media only screen and (max-width: 800px) {
+            body {
+                width: auto;
+                margin: 0px 10px;
+            }
+
+            .link-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .link-list a {
+                height: 100px;
+                margin-bottom: 10px;
+            }
+
+            .pulteney-logo {
+                width: 20vw;
+                height: auto;
+            }
+
+            .canvas-logo {
+                width: 20vw;
+                height: auto;
+            }
+
+            .logos-ampersand {
+                font-size: 20vw;
+            }
+        }
     }
 </style>
 <script>
