@@ -7,7 +7,8 @@
         <img class="canvas-logo" src="Canvas_Stacked_ByInstructure_Color_RGB.svg" />
     </div>
     <div class="explanation">
-        You are about to enter Canvas, which is the Learning Management System at Pulteney Grammar School. Please select your role, so that you can visit the correct login page.
+        You are about to enter Canvas, which is the Learning Management System at Pulteney Grammar School. Please select
+        your role, so that you can visit the correct login page.
     </div>
     <div class="link-list">
         <a href="https://pulteney.instructure.com/login/saml">
@@ -61,7 +62,7 @@
     .main {
         background: white;
         padding: 30px;
-        border:#15212f solid 10px;
+        border: #15212f solid 10px;
         border-radius: 40px;
     }
 
@@ -108,5 +109,19 @@
         height: 180px;
     }
 </style>
+<script>
+    var environment = '';
+    var params = new URLSearchParams(location.search);
+    environment = params.get('environment');
+    var canvas_domain = 'pulteney.instructure.com';
+    if (environment === 'beta')
+        canvas_domain = 'pulteney.beta.instructure.com';
+    if (environment === 'test')
+        canvas_domain = 'pulteney.test.instructure.com';
+    console.log(environment, canvas_domain)
+    document.querySelectorAll('.link-list a').forEach(a =>
+        a.href = a.href.replace('pulteney.instructure.com', canvas_domain)
+    )
+</script>
 
 </html>
